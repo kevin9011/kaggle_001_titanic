@@ -1,4 +1,5 @@
-# Titanic: Machine Learning from Disaster #### Predict Survival on the Titanic and get familiar with ML Basics
+# Titanic: Machine Learning from Disaster 
+#### Predict Survival on the Titanic and get familiar with ML Basics
 
 
 ## Competition Description
