@@ -23,9 +23,17 @@ train_data$SexN <- as.numeric(train_data$Sex=='male')
 
 
 #Check Missing Data
-is.na(train_data$Age))
+train_data_thin <- train_data[!is.na(train_data$age),]
+View(train_data_thin)
+
+train_data_thin_temp <- separate(train_data_thin, Name, c("FName","Title_LName"), sep = ",", remove = FALSE)
+train_data_thin_temp2 <- separate(train_data_thin_temp, Title_LName, c("Title","LName"), sep = "\\." )
+
+train_data_thin_temp2[train_data_thin_temp2$LName == 'Ernesti Arvid',]
+LName_Freq <- data.frame(table(train_data_thin_temp2$LName))
 
 
+View(train_data_thin_temp)
 
 #ML01 - logistic Regression
 Tit_LR <- lm(Survived ~ Pclass+SexN+Age+age_class, data=train_data)
